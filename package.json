@@ -1,6 +1,6 @@
 {
   "name": "aliyun-api-gateway",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Aliyun API Gateway Node.js SDK",
   "main": "index.js",
   "directories": {
