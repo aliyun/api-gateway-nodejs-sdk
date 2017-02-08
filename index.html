@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./aliyun-api-gateway.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+// appcode
+const SimpleClient = require('aliyun-api-gateway').SimpleClient;
+const appcode = '你自己的AppCode';
+const client = new SimpleClient(appcode);
+
+// appkey appsecret
+const Client = require('aliyun-api-gateway').Client;
+const client = new Client('<appkey>', '<appsecret>');
+
+// client.post() => promise
+// client.get() => promise
+</script>
+</body>
+</html>
