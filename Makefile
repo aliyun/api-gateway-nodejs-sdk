@@ -12,7 +12,7 @@ DOXMATE = ./node_modules/.bin/doxmate
 PATH := ./node_modules/.bin:$(PATH)
 
 lint:
-	@eslint --fix lib test
+	@eslint --fix lib test *.js
 
 doc:
 	@$(DOXMATE) build -o out
