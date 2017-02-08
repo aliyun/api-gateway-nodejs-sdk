@@ -14,6 +14,9 @@ PATH := ./node_modules/.bin:$(PATH)
 lint:
 	@eslint --fix lib test
 
+build:
+	@browserify -r ./index.js:aliyun-api-gateway -o aliyun-api-gateway.js
+
 doc:
 	@$(DOXMATE) build -o out
 
