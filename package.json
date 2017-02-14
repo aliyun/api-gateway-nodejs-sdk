@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "build": "browserify -r ./index.js:aliyun-api-gateway -o aliyun-api-gateway.js"
   },
   "author": "Jackson Tian",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "uuid": "^3.0.0"
   },
   "devDependencies": {
+    "browserify": "^14.1.0",
     "co-mocha": "^1.1.3",
     "doxmate": "^0.3.1",
     "eslint": "^3.11.1",
