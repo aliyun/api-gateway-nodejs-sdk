@@ -21,9 +21,9 @@ var readFile = function (filepath, encoding) {
 describe('SimpleClient', function () {
   var client = new SimpleClient(config.appcode);
 
-  it('should ok get(url)', function* () {
+  it('should ok get(url)', async function () {
     var url = 'https://dm-81.data.aliyun.com/rest/160601/ip/getIpInfo.json?ip=210.75.225.254';
-    var result = yield client.get(url);
+    var result = await client.get(url);
     expect(result).to.be.eql({
       code: 0,
       data: {
@@ -44,9 +44,9 @@ describe('SimpleClient', function () {
     });
   });
 
-  it('should ok with get(url, options)', function* () {
+  it('should ok with get(url, options)', async function () {
     var url = 'https://dm-81.data.aliyun.com/rest/160601/ip/getIpInfo.json';
-    var result = yield client.get(url, {
+    var result = await client.get(url, {
       data: {ip: '210.75.225.254'}
     });
     expect(result).to.be.eql({
@@ -69,10 +69,10 @@ describe('SimpleClient', function () {
     });
   });
 
-  it('should ok with post(url)', function* () {
+  it('should ok with post(url)', async function () {
     var url = 'https://dm-72.data.aliyun.com/rest/160601/int_image/matching.json';
-    var png = yield readFile(path.join(__dirname + '/figures/test.png'), 'base64');
-    var result = yield client.post(url, {
+    var png = await readFile(path.join(__dirname + '/figures/test.png'), 'base64');
+    var result = await client.post(url, {
       data: {
         'image': {
           'dataType': 10,
@@ -90,8 +90,7 @@ describe('SimpleClient', function () {
           '#f9f0e0',
           '#eaf9e0',
           '#e0f6f9',
-          '#f0e0f9',
-          '#f9e0ea'
+          '#f0e0f9'
         ]
       }
     });
