@@ -4,7 +4,10 @@
 
 const co = require('co');
 
-const Client = require('aliyun-api-gateway').Client;
+const {
+  CONTENT_TYPE_FORM,
+  Client
+} = require('./');
 
 const client = new Client('APP_KEY', 'APP_SECRET');
 
@@ -33,7 +36,8 @@ co(function* () {
 
   var result = yield client.post(url, {
     headers: {
-      accept: 'application/json'
+      accept: 'application/json',
+      'content-type': CONTENT_TYPE_FORM
     },
     signHeaders: {
       'a-header1': 'header1Value',
