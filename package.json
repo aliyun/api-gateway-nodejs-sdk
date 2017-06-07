@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "debug": "^2.6.0",
-    "httpx": "^2.0.0",
+    "httpx": "^2.1.1",
     "uuid": "^3.0.0"
   },
   "devDependencies": {

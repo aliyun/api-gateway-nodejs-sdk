@@ -9,10 +9,17 @@ ISTANBUL = ./node_modules/.bin/istanbul
 MOCHA = ./node_modules/mocha/bin/_mocha
 COVERALLS = ./node_modules/coveralls/bin/coveralls.js
 DOXMATE = ./node_modules/.bin/doxmate
-PATH := ./node_modules/.bin:$(PATH)
+BROWSERIFY = ./node_modules/.bin/browserify
+DEREQUIRE = ./node_modules/.bin/derequire
 
 lint:
-	@eslint --fix lib test *.js
+	@eslint --fix lib test
+
+install:
+	@npm install . --registry=https://registry.npm.taobao.org
+
+build:
+	@$(BROWSERIFY) -r ./index.js:aliyun-api-gateway --standalone APIGateWay | $(DEREQUIRE) > build/aliyun-api-gateway-standalone.js
 
 doc:
 	@$(DOXMATE) build -o out
@@ -50,4 +57,4 @@ test-coveralls:
 
 test-all: test test-coveralls
 
-.PHONY: test
+.PHONY: test build
