@@ -20,13 +20,12 @@ doc:
 	@doxmate build -o out
 
 test:
-	@mocha \
-		--reporter $(REPORTER) \
-		--timeout $(TIMEOUT) \
-		$(TESTS)
+	@mocha --reporter $(REPORTER) --timeout $(TIMEOUT) $(TESTS)
 
-test-es5:
+transcompile:
 	@babel lib/ -d es5/
+
+test-es5: transcompile
 	@mocha --compilers js:babel-register -t $(TIMEOUT) -R spec $(TESTS)
 
 test-cov:
@@ -35,8 +34,8 @@ test-cov:
 		--timeout $(TIMEOUT) \
 		$(TESTS)
 
-test-coveralls: lint
-	@nyc mocha -t $(TIMEOUT) -R spec $(TESTS)
+test-coveralls: lint transcompile
+	@nyc mocha --compilers js:babel-register -t $(TIMEOUT) -R spec $(TESTS)
 	@echo TRAVIS_JOB_ID $(TRAVIS_JOB_ID)
 	@nyc report --reporter=text-lcov | coveralls
 
