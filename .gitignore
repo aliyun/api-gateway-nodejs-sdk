@@ -3,3 +3,4 @@ out
 coverage
 test/config.js
 build/
+es5/
