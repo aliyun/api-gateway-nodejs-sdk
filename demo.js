@@ -171,3 +171,20 @@ co(function* () {
 
   console.log(JSON.stringify(result));
 });
+
+
+co(function* () {
+  var url = 'http://api.equip.emailuo.com/equipment/manufacturer/update';
+
+  var result = yield client.put(url, {
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      gid: ''
+    }
+  });
+
+  console.log(JSON.stringify(result));
+});
