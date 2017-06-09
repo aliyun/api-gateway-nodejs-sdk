@@ -73,6 +73,7 @@ describe('SimpleClient', function () {
     var url = 'https://dm-72.data.aliyun.com/rest/160601/int_image/matching.json';
     var png = await readFile(path.join(__dirname + '/figures/test.png'), 'base64');
     var result = await client.post(url, {
+      timeout: 5000, // 5s
       data: {
         'image': {
           'dataType': 10,

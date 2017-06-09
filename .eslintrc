@@ -47,6 +47,13 @@
     "node": true,
     "browser": true
   },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "script",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "globals": {
     "describe": true,
     "it": true,

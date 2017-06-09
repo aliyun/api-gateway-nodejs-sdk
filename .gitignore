@@ -1,5 +1,6 @@
 node_modules
 out
 coverage
-test/config.js
 build/
+es5/
+.nyc_output
