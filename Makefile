@@ -1,7 +1,7 @@
 # $@ = target file
 # $< = first dependency
 # $^ = all dependencies
-
+SHELL=/bin/bash
 TESTS = test/*.test.js
 REPORTER = spec
 TIMEOUT = 20000
