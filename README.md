@@ -55,7 +55,7 @@ co(function* () {
 'use strict';
 const co = require('co');
 const Client = require('aliyun-api-gateway').Client;
-const client = new Client('YOUR_APP_CODE','YOUR_APP_SECRET');
+const client = new Client('YOUR_APP_KEY','YOUR_APP_SECRET');
 
 co(function* () {
   var url = 'http://apiqingdaohttps.foundai.com/test1234';
