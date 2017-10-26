@@ -30,7 +30,7 @@ The SDK contains Simple client(authrozied by appcode) and Normal client(authrozi
 'use strict';
 const co = require('co');
 const SimpleClient = require('aliyun-api-gateway').SimpleClient;
-const client = new SimpleClient('YOUR_APP_KEY');
+const client = new SimpleClient('YOUR_APP_CODE');
 
 co(function* () {
   var url = 'http://apiqingdaohttps.foundai.com/test1234';
