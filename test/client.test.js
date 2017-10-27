@@ -37,7 +37,30 @@ describe('client', function () {
         county: '',
         county_id: '',
         ip: '210.75.225.254',
-        isp: '中国科技网',
+        isp: '科技网',
+        isp_id: '1000114',
+        region: '北京市',
+        region_id: '110000'
+      }
+    });
+  });
+
+  it('should ok with falsy value', async function () {
+    var url = 'https://dm-81.data.aliyun.com/rest/160601/ip/getIpInfo.json?ip=210.75.225.254&key=0';
+    var result = await client.get(url);
+    expect(result).to.be.eql({
+      code: 0,
+      data: {
+        area: '华北',
+        area_id: '100000',
+        city: '北京市',
+        city_id: '110100',
+        country: '中国',
+        country_id: 'CN',
+        county: '',
+        county_id: '',
+        ip: '210.75.225.254',
+        isp: '科技网',
         isp_id: '1000114',
         region: '北京市',
         region_id: '110000'
@@ -62,7 +85,7 @@ describe('client', function () {
         county: '',
         county_id: '',
         ip: '210.75.225.254',
-        isp: '中国科技网',
+        isp: '科技网',
         isp_id: '1000114',
         region: '北京市',
         region_id: '110000'
@@ -87,7 +110,7 @@ describe('client', function () {
         county: '',
         county_id: '',
         ip: '210.75.225.254',
-        isp: '中国科技网',
+        isp: '科技网',
         isp_id: '1000114',
         region: '北京市',
         region_id: '110000'

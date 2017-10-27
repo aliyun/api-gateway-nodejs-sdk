@@ -36,7 +36,7 @@ describe('SimpleClient', function () {
         county: '',
         county_id: '',
         ip: '210.75.225.254',
-        isp: '中国科技网',
+        isp: '科技网',
         isp_id: '1000114',
         region: '北京市',
         region_id: '110000'
@@ -61,7 +61,7 @@ describe('SimpleClient', function () {
         county: '',
         county_id: '',
         ip: '210.75.225.254',
-        isp: '中国科技网',
+        isp: '科技网',
         isp_id: '1000114',
         region: '北京市',
         region_id: '110000'
