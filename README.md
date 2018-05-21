@@ -3,6 +3,8 @@ Aliyun API Gateway SDK for Node.js
 
 API 网关（API Gateway），提供高性能、高可用的 API 托管服务，帮助用户对外开放其部署在 ECS、容器服务等阿里云产品上的应用，提供完整的 API 发布、管理、维护生命周期管理。用户只需简单操作，即可快速、低成本、低风险的开放数据或服务。
 
+> 请注意：由于 API Gateway 需要使用 AK 来实现签名，在浏览器场景下，极易容易产生安全性问题，因此本模块不支持在浏览器中使用。
+
 ## Status
 
 [![Build Status](https://travis-ci.org/aliyun/api-gateway-nodejs-sdk.svg?branch=master)](https://travis-ci.org/aliyun/api-gateway-nodejs-sdk)
