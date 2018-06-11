@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "make test",
+    "lint": "eslint --fix lib test index.js demo.js",
     "prepublishOnly": "babel lib/ -d es5/"
   },
   "author": "Jackson Tian",

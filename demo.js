@@ -6,6 +6,7 @@ const co = require('co');
 
 const {
   CONTENT_TYPE_FORM,
+  CONTENT_TYPE_TEXT,
   Client
 } = require('./');
 
@@ -62,7 +63,7 @@ co(function* () {
   var result = yield client.post(url, {
     headers: {
       accept: 'application/json',
-      'content-type': Client.CONTENT_TYPE_TEXT
+      'content-type': CONTENT_TYPE_TEXT
       //（可选）Body MD5,服务端会校验Body内容是否被篡改,建议Body非Form表单时添加此Header
       // headers.put(HttpHeader.HTTP_HEADER_CONTENT_MD5, MessageDigestUtil.base64AndMD5(body));
     },
@@ -86,7 +87,7 @@ co(function* () {
   var result = yield client.post(url, {
     headers: {
       accept: 'application/json',
-      'content-type': Client.CONTENT_TYPE_TEXT
+      'content-type': CONTENT_TYPE_TEXT
       //（可选）Body MD5,服务端会校验Body内容是否被篡改,建议Body非Form表单时添加此Header
       // headers.put(HttpHeader.HTTP_HEADER_CONTENT_MD5, MessageDigestUtil.base64AndMD5(body));
     },
@@ -110,7 +111,7 @@ co(function* () {
   var result = yield client.post(url, {
     headers: {
       accept: 'application/json',
-      'content-type': Client.CONTENT_TYPE_TEXT
+      'content-type': CONTENT_TYPE_TEXT
       //（可选）Body MD5,服务端会校验Body内容是否被篡改,建议Body非Form表单时添加此Header
       // headers.put(HttpHeader.HTTP_HEADER_CONTENT_MD5, MessageDigestUtil.base64AndMD5(body));
     },
@@ -134,7 +135,7 @@ co(function* () {
   var result = yield client.post(url, {
     headers: {
       accept: 'application/json',
-      'content-type': Client.CONTENT_TYPE_TEXT
+      'content-type': CONTENT_TYPE_TEXT
       //（可选）Body MD5,服务端会校验Body内容是否被篡改,建议Body非Form表单时添加此Header
       // headers.put(HttpHeader.HTTP_HEADER_CONTENT_MD5, MessageDigestUtil.base64AndMD5(body));
     },
