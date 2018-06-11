@@ -12,10 +12,10 @@ const {
 
 const client = new Client('APP_KEY', 'APP_SECRET');
 
-co(function* () {
+async function get() {
   var url = 'http://api.aaaa.com/get';
 
-  var result = yield client.get(url, {
+  var result = await client.get(url, {
     query: {
       'a-query1': 'query1Value',
       'b-query2': 'query2Value'
@@ -30,12 +30,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+get();
+
+async function post() {
   var url = 'http://api.aaaa.com/postform';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     headers: {
       accept: 'application/json',
       'content-type': CONTENT_TYPE_FORM
@@ -55,12 +57,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+post();
+
+async function postText() {
   var url = 'http://api.aaaa.com/poststring';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     headers: {
       accept: 'application/json',
       'content-type': CONTENT_TYPE_TEXT
@@ -79,12 +83,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+postText();
+
+async function postBuffer () {
   var url = 'http://api.aaaa.com/poststream';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     headers: {
       accept: 'application/json',
       'content-type': CONTENT_TYPE_TEXT
@@ -103,12 +109,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+postBuffer();
+
+async function postString () {
   var url = 'http://api.aaaa.com/putstring';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     headers: {
       accept: 'application/json',
       'content-type': CONTENT_TYPE_TEXT
@@ -127,12 +135,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+postString();
+
+async function putStream () {
   var url = 'http://api.aaaa.com/putstream';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     headers: {
       accept: 'application/json',
       'content-type': CONTENT_TYPE_TEXT
@@ -151,12 +161,14 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
-co(function* () {
+putStream();
+
+async function doDelete() {
   var url = 'http://api.aaaa.com/delete';
 
-  var result = yield client.delete(url, {
+  var result = await client.delete(url, {
     headers: {
       accept: 'application/json'
     },
@@ -171,13 +183,15 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
+
+doDelete();
 
 
-co(function* () {
+async function put() {
   var url = 'http://api.equip.emailuo.com/equipment/manufacturer/update';
 
-  var result = yield client.put(url, {
+  var result = await client.put(url, {
     headers: {
       accept: 'application/json',
       'content-type': 'application/x-www-form-urlencoded'
@@ -188,4 +202,6 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
+
+put();

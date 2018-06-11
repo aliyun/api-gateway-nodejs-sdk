@@ -9,9 +9,11 @@ const client = new SimpleClient(appcode);
 
 const url = 'http://ali-bankcard.showapi.com/bankcard';
 
-co(function* () {
-  var result = yield client.get(url, {
+async function get() {
+  var result = await client.get(url, {
     data: {kahao: '6215982582010042122'}
   });
   console.log(result);
-});
+}
+
+get();

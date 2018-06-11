@@ -30,14 +30,14 @@ The SDK contains Simple client(authrozied by appcode) and Normal client(authrozi
 
 ```js
 'use strict';
-const co = require('co');
+
 const SimpleClient = require('aliyun-api-gateway').SimpleClient;
 const client = new SimpleClient('YOUR_APP_CODE');
 
-co(function* () {
+async function post() {
   var url = 'http://apiqingdaohttps.foundai.com/test1234';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     data: {
       'testtest': 'query1Value'
     },
@@ -47,22 +47,25 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
-});
+}
 
+post().catch((err) => {
+  console.log(err.stack);
+});
 ```
 
 ### Client (recommend)
 
 ```js
 'use strict';
-const co = require('co');
+
 const Client = require('aliyun-api-gateway').Client;
 const client = new Client('YOUR_APP_KEY','YOUR_APP_SECRET');
 
-co(function* () {
+async function post() {
   var url = 'http://apiqingdaohttps.foundai.com/test1234';
 
-  var result = yield client.post(url, {
+  var result = await client.post(url, {
     data: {
       'testtest': 'query1Value'
     },
@@ -72,6 +75,10 @@ co(function* () {
   });
 
   console.log(JSON.stringify(result));
+}
+
+post().catch((err) => {
+  console.log(err.stack);
 });
 ```
 
