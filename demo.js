@@ -2,8 +2,6 @@
 
 // npm install aliyun-api-gateway --save
 
-const co = require('co');
-
 const {
   CONTENT_TYPE_FORM,
   CONTENT_TYPE_TEXT,
