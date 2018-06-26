@@ -14,7 +14,8 @@ install:
 	@npm install . --registry=https://registry.npm.taobao.org
 
 build:
-	@browserify -r ./index.js:aliyun-api-gateway --standalone APIGateWay | $(DEREQUIRE) > build/aliyun-api-gateway-standalone.js
+	@npm install browserify derequire -g --registry=https://registry.npm.taobao.org
+	@browserify -r ./index.js:aliyun-api-gateway --standalone APIGateWay | derequire > build/aliyun-api-gateway-standalone.js
 
 doc:
 	@doxmate build -o out
