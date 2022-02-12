@@ -11,10 +11,10 @@ lint:
 	@eslint --fix lib test index.js
 
 install:
-	@npm install . --registry=https://registry.npm.taobao.org
+	@npm install . --registry=https://registry.npmmirror.com
 
 build:
-	@npm install browserify derequire -g --registry=https://registry.npm.taobao.org
+	@npm install browserify derequire -g --registry=https://registry.npmmirror.com
 	@browserify -r ./index.js:aliyun-api-gateway --standalone APIGateWay | derequire > build/aliyun-api-gateway-standalone.js
 
 doc:
